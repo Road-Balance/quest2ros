@@ -94,25 +94,25 @@ class ros2quest:
     
     self.br.sendTransform(right_hand_transform)
 
-    if self.prev_right_hand_pos is not None:
-      pos_delta = self.prev_right_hand_pos - self.right_hand_pos
-      # cur_time = 
-      time_delta = time.time() - self.prev_right_time
-      twist = pos_delta / time_delta
-      movement = np.sum(twist)
-      if movement > 0.002:
-        print(time_delta, twist, movement)
-      else:
-        twist = np.array([0.0, 0.0, 0.0])
+    # if self.prev_right_hand_pos is not None:
+    #   pos_delta = self.prev_right_hand_pos - self.right_hand_pos
+    #   # cur_time = 
+    #   time_delta = time.time() - self.prev_right_time
+    #   twist = pos_delta / time_delta
+    #   movement = np.sum(twist)
+    #   if movement > 0.002:
+    #     print(time_delta, twist, movement)
+    #   else:
+    #     twist = np.array([0.0, 0.0, 0.0])
       
-      twist_msg = Twist()
-      twist_msg.linear.x = twist[0]
-      twist_msg.linear.y = twist[1]
-      twist_msg.linear.z = twist[2]
-      self.pose_based_twist.publish(twist_msg)
+    #   twist_msg = Twist()
+    #   twist_msg.linear.x = twist[0]
+    #   twist_msg.linear.y = twist[1]
+    #   twist_msg.linear.z = twist[2]
+    #   self.pose_based_twist.publish(twist_msg)
 
-    self.prev_right_hand_pos = self.right_hand_pos
-    self.prev_right_time = time.time()
+    # self.prev_right_hand_pos = self.right_hand_pos
+    # self.prev_right_time = time.time()
 
   def ovr2ros_right_hand_inputs_callback(self, data):
 
