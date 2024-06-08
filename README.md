@@ -1,6 +1,8 @@
 # Quest2ROS
 Ros code to connect the occulus quest to ROS and recive the controler Position/velocitys and send haptic feedback to the controllers.
 
+https://github.com/kimsooyoung/quest2ros/assets/12381733/9f015658-e112-4f56-a20d-ee35a6ad8890
+
 
 ## setup
 
